@@ -25,7 +25,7 @@ function SignIn() {
     const authCheck = async () => {
       try {
         if (Cookies.get('Authorization')) {
-          // window.location.href = "/";
+          window.location.href = "/";
           setIsAuth(true);
         }
         else {
@@ -71,29 +71,23 @@ function SignIn() {
       setIsAuth(false);
     }
   };
-
-  if (isAuth == true) {
-    return <Navigate to={"/"} />;
-  }
-  else {
-    return (
-      <div className={styles.SignInWidget}>
-        <div className={styles.Group}>
-          <form onSubmit={SendRequest}>
-            <h2 className={styles.Header}>Login</h2>
-            <li className={styles.ErrorLabel}>{hasError == true ? TextError : null}</li>
-            <Field className={styles.UsernameField} name={"username"} placeholder={"Username"} type={"text"} value={username} onChange={ChangeFunction} />
-            <li className={styles.ErrorLabel}>{hasUsernameError == true ? TextUsernameError : null}</li>
-            <Field className={styles.PasswordField} name={"password"} placeholder={"Password"} type={"password"} value={password} onChange={ChangeFunction} />
-            <li className={styles.ErrorLabel}>{hasPasswordError == true ? TextPasswordError : null}</li>
-            <center>
-              <Button disabled={hasError || hasUsernameError || hasPasswordError} isactive={!hasError && !hasUsernameError && !hasPasswordError ? "true" : "false"} type={"submit"} text={"Login"} />
-            </center>
-          </form>
-        </div>
+  return (
+    <div className={styles.LoginWidget}>
+      <div className={styles.Group}>
+        <form onSubmit={SendRequest}>
+          <h2 className={styles.Header}>Login</h2>
+          <li className={styles.ErrorLabel}>{hasError == true ? TextError : null}</li>
+          <Field className={styles.UsernameField} name={"username"} placeholder={"Username"} type={"text"} value={username} onChange={ChangeFunction} />
+          <li className={styles.ErrorLabel}>{hasUsernameError == true ? TextUsernameError : null}</li>
+          <Field className={styles.PasswordField} name={"password"} placeholder={"Password"} type={"password"} value={password} onChange={ChangeFunction} />
+          <li className={styles.ErrorLabel}>{hasPasswordError == true ? TextPasswordError : null}</li>
+          <center>
+            <Button disabled={hasError || hasUsernameError || hasPasswordError} isactive={!hasError && !hasUsernameError && !hasPasswordError ? "true" : "false"} type={"submit"} text={"Login"} />
+          </center>
+        </form>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default SignIn;

@@ -3,6 +3,7 @@ import Cookies from 'js-cookie';
 import Dashboard from '../Dashboard/Dashboard';
 import Login from '../Login/Login';
 import Preloader from "../../components/Preloader/Preloader";
+import { Navigate } from 'react-router-dom';
 
 const App = () => {
     const [isAuth, setIsAuth] = useState(false);
@@ -11,7 +12,7 @@ const App = () => {
     useEffect(() => {
         const authCheck = async () => {
             try {
-                if (Cookies.get('Authorization')) {
+                if (!Cookies.get('Authorization')) {
                     setIsAuth(true);
                 }
                 else {
@@ -40,12 +41,19 @@ const App = () => {
             </>
         );
     }
-
-    return (
-        <div>
-            {isAuth ? <Dashboard /> : <Login />}
-        </div>
-    );
+    if (isAuth == true)
+    {
+        return <Navigate to={"/login"} />;
+    }
+    else
+    {
+        return (
+            <div>
+                <Dashboard />
+                {/* {isAuth ? <Dashboard /> : <Login />} */}
+            </div>
+        );
+    }
 };
 
 export default App;
