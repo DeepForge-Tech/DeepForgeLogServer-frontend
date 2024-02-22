@@ -1,0 +1,49 @@
+.FilledButtonLink {
+    display: flex;
+    flex: 1 1 auto;
+    height: 1.5rem;
+    min-width: 100px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    /* gap: 0.5rem; */
+    border-radius: 0.75rem;
+    padding: 0.5rem;
+    font-size: 1em !important;
+    line-height: 1.25rem !important;
+    font-weight: 500;
+    text-transform: capitalize;
+    background-color: #a4c2b2;
+    color: black;
+    margin: 0.2em;
+}
+
+.FilledButtonLink:hover,.ButtonLink:hover {
+    display: flex;
+    flex: 1 1 auto;
+    overflow: hidden;
+    cursor: pointer;
+    transform: scale(1.05);
+    align-items: center;
+    justify-content: center;
+}
+.ButtonLink {
+    background: transparent;
+    color: #a4c2b2;
+    border: 2px solid;
+    display: flex;
+    flex: 1 1 auto;
+    height: 1.5rem;
+    min-width: 100px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    /* gap: 0.5rem; */
+    border-radius: 0.75rem;
+    padding: 0.5rem;
+    font-size: 1em !important;
+    line-height: 1.25rem !important;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin: 0.2em;
+}

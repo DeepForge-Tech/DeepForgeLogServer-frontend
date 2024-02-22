@@ -1,0 +1,84 @@
+.Header {
+    padding: 0 1.5em !important;
+    /* margin: 44px auto; */
+    max-width: 100%;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    background:rgb(31 25 26 / .95);
+    border: 2px solid;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-color: transparent;
+}
+
+.Fixed {
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999; */
+    animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+    /* padding-top: 0px;
+    padding-bottom: 0px; */
+}
+
+.HeaderText {
+    padding-bottom: 3px;
+}
+
+.HeaderContent {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    /* justify-content: center !important; */
+    align-items: center !important;
+}
+
+.Space {
+    width: 100%;
+    max-width: 100%;
+}
+
+.Social {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    /* position: absolute;
+    left: 90%;
+    transform: translate(-50%, -50%); */
+}
+
+.GithubLogo {
+    fill: white;
+    padding: 1em;
+    height: 32px;
+    will-change: filter;
+    transition: filter 300ms;
+}
+
+.GithubLogo:hover {
+    filter: drop-shadow(0 0 15px white);
+}
+
+.GithubLogo.react:hover {
+    filter: drop-shadow(0 0 15px white);
+}
+
+.GithubLink,.LogoLink {
+    line-height: 0;
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    font-family: 'OpenSans',sans-serif;
+    color: #a4c2b2;
+}
+#NameCompany_1 {
+    color: white;
+}
