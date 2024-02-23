@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import svgr from 'vite-plugin-svgr'
+// import svgr from 'vite-plugin-svgr'
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
@@ -20,7 +20,7 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/api\/auth/, ""),
       }
     },
-    port: 3000,
+    port: 8100,
   },
-  plugins: [react(), svgr()],
+  plugins: [react()],
 });
