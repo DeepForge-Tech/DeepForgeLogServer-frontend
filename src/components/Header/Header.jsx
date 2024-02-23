@@ -1,5 +1,5 @@
-import githubLogo from '/Images/svg/github.svg'
-import Logo from '/Images/svg/Logo.svg'
+import githubLogo from '/Images/github.svg'
+import Logo from '/Images/Logo.svg'
 import React, { useState, useEffect } from 'react';
 import { useLocation } from "react-router-dom";
 import styles from './Header.module.css'
