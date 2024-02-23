@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api/logs": {
-        target: "http://localhost:5002",
+        target: "https://deepforge-services.alwaysdata.net",
         changeOrigin: true,
         secure: true,
         ws: true,
