@@ -8,14 +8,14 @@ export default defineConfig({
       "/api/logs": {
         target: "http://localhost:5002",
         changeOrigin: true,
-        secure: false,
+        secure: true,
         ws: true,
         rewrite: (path) => path.replace(/^\/api\/logs/, ""),
       },
       "/api/auth": {
         target: "http://localhost:5003",
         changeOrigin: true,
-        secure: false,
+        secure: true,
         ws: true,
         rewrite: (path) => path.replace(/^\/api\/auth/, ""),
       }
