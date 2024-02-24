@@ -62,7 +62,7 @@ function SignIn() {
         .then(async (response) => {
           // answer = response.data.message
           console.log(response)
-          if (response.statusText == "OK") {
+          if (response.data.message == "OK") {
             window.location.href = "/";
             setIsAuth(true);
             console.log(response.data.message);
