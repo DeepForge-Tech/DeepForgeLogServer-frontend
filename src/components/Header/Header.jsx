@@ -74,7 +74,7 @@ function Header() {
                 </a>
                 <div className={styles.Space}></div>
                 <div className={styles.Social}>
-                    <a href="https://github.com/DeepForge-Technologies" className={styles.GithubLink}>
+                    <a href="https://github.com/DeepForge-Tech" className={styles.GithubLink}>
                         <img src={githubLogo} className={styles.GithubLogo} width={"32"} height={"32"} />
                     </a>
                     {!isAuth ? <ButtonLink isFilled={false} text={"Login"} href={"/login"} /> : null}
