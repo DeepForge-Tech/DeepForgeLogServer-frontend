@@ -5,9 +5,10 @@ import Field from "../../components/Field/Field"
 import Button from "../../components/Button/Button"
 import { Navigate } from "react-router-dom";
 import Cookies from 'js-cookie';
+// import Login from './Auth.js';
 
 const instance = axios.create({
-  withCredentials: true,
+  withCredentials: true
 })
 
 function SignIn() {
@@ -56,14 +57,21 @@ function SignIn() {
     event.preventDefault();
     try {
       const data = { username, password };
-      const res = await instance.post('/api/auth/login', data);
-      if (res.data.message == "OK") {
-        window.location.href = "/";
-        setIsAuth(true);
-      }
-      else {
-        setIsAuth(false);
-      }
+      // Login(data,setIsAuth);
+      const res = instance.post('/api/auth/login', data)
+        .then(async (response) => {
+          // answer = response.data.message
+          console.log(response)
+          if (response.statusText == "OK") {
+            window.location.href = "/";
+            setIsAuth(true);
+            console.log(response.data.message);
+          }
+          else {
+            setIsAuth(false);
+          }
+        });
+
     }
     catch (error) {
       console.error(error);

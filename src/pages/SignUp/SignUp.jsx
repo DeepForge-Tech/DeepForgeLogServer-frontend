@@ -57,7 +57,7 @@ function SignUp() {
     try {
       const data = { username, password };
       const res = await instance.post('/api/auth/signup', data);
-      if (res.data.message == "OK") {
+      if (res.statusText == "OK") {
         window.location.href = "/";
         setIsAuth(true);
       }

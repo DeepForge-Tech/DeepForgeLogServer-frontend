@@ -26,7 +26,7 @@ function Header() {
             try {
                 // const current_url = window.location.href;
                 if (Cookies.get('Authorization')) {
-                    if (location.pathname == "/" == true) {
+                    if (location.pathname == "/") {
                         setSignUpButtonText("exit");
                         setSignUpButtonLink('/logout');
                     }
@@ -58,18 +58,10 @@ function Header() {
         };
     }, []);
 
-    const isSticky = (e) => {
-        const header = document.querySelector('.Header');
+    const isSticky = async function() {
+        const header = await document.querySelector('.Header');
         const scrollTop = window.scrollY;
-        scrollTop >= 120 ? header.classList.add('Fixed') : header.classList.remove('Fixed');
-    };
-
-    const handleSignUpButtonClick = async () => {
-        if (signUpButtonText === 'Exit') {
-            await LogoutRequest();
-        } else {
-            window.location.href = signUpButtonLink;
-        }
+        scrollTop >= 120 ? await header.classList.add('Fixed') : await header.classList.remove('Fixed');
     };
 
     return (
